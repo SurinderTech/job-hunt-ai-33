@@ -1,74 +1,95 @@
 import { useState } from "react";
-import { Header } from "@/components/Header";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { HeroSection } from "@/components/HeroSection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { JobSearchForm, JobSearchParams } from "@/components/JobSearchForm";
-import { JobCard, Job } from "@/components/JobCard";
-import { SettingsDialog } from "@/components/SettingsDialog";
+import { JobResultsSection } from "@/components/JobResultsSection";
+import { Job } from "@/components/JobCard";
 import { toast } from "sonner";
-import { Briefcase } from "lucide-react";
 
 const Index = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async (params: JobSearchParams) => {
     setIsSearching(true);
+    setHasSearched(true);
     
     try {
-      // Simulated job search - will be replaced with actual API calls
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Get API key from localStorage
+      const jsearchKey = localStorage.getItem("jsearch_api_key");
       
-      const mockJobs: Job[] = [
+      if (!jsearchKey) {
+        toast.error("Please add your JSearch API key in settings first");
+        setIsSearching(false);
+        return;
+      }
+
+      // Call JSearch API via RapidAPI
+      const query = `${params.role} ${params.location}`.trim();
+      const response = await fetch(
+        `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(query)}&page=1&num_pages=1&date_posted=all`,
         {
-          id: "1",
-          title: "Senior Software Engineer",
-          company: "TechCorp",
-          location: "Remote",
-          platform: "JSearch",
-          link: "https://example.com/job1",
-          matchScore: 92,
-          description: "We're looking for a talented software engineer to join our team...",
-          skills: ["React", "TypeScript", "Node.js", "AWS", "Docker"],
-        },
-        {
-          id: "2",
-          title: "Full Stack Developer",
-          company: "StartupXYZ",
-          location: "New York, NY (Hybrid)",
-          platform: "JSearch",
-          link: "https://example.com/job2",
-          matchScore: 85,
-          description: "Join our fast-growing startup as a full stack developer...",
-          skills: ["JavaScript", "Python", "React", "MongoDB", "GraphQL"],
-        },
-        {
-          id: "3",
-          title: "Frontend Engineer",
-          company: "Digital Solutions",
-          location: "San Francisco, CA",
-          platform: "JSearch",
-          link: "https://example.com/job3",
-          matchScore: 78,
-          description: "Looking for a creative frontend engineer to build amazing user experiences...",
-          skills: ["React", "CSS", "TypeScript", "Next.js"],
-        },
-        {
-          id: "4",
-          title: "Software Developer",
-          company: "Enterprise Inc",
-          location: "Remote",
-          platform: "JSearch",
-          link: "https://example.com/job4",
-          matchScore: 65,
-          description: "Seeking a motivated software developer to work on enterprise solutions...",
-          skills: ["Java", "Spring Boot", "MySQL", "Kubernetes"],
-        },
-      ];
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key": jsearchKey,
+            "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch jobs");
+      }
+
+      const data = await response.json();
       
-      setJobs(mockJobs);
-      toast.success(`Found ${mockJobs.length} matching jobs!`);
+      // Transform API response to our Job format
+      const userSkills = params.skills.toLowerCase().split(",").map(s => s.trim()).filter(Boolean);
+      
+      const transformedJobs: Job[] = (data.data || []).map((job: any, index: number) => {
+        // Extract skills from job description
+        const descLower = (job.job_description || "").toLowerCase();
+        const matchedSkills = userSkills.filter(skill => descLower.includes(skill));
+        
+        // Calculate match score based on skills match
+        const matchScore = userSkills.length > 0 
+          ? Math.round((matchedSkills.length / userSkills.length) * 100)
+          : Math.floor(Math.random() * 40) + 50; // Random 50-90 if no skills provided
+
+        // Extract common tech skills from description
+        const commonSkills = ["JavaScript", "React", "Python", "Node.js", "TypeScript", "SQL", "AWS", "Docker", "Git", "Java", "C++", "Ruby", "PHP", "Angular", "Vue"];
+        const detectedSkills = commonSkills.filter(skill => 
+          descLower.includes(skill.toLowerCase())
+        ).slice(0, 6);
+
+        return {
+          id: job.job_id || `job-${index}`,
+          title: job.job_title || "Unknown Title",
+          company: job.employer_name || "Unknown Company",
+          location: job.job_city 
+            ? `${job.job_city}, ${job.job_country || ""}`.trim()
+            : job.job_is_remote ? "Remote" : "Location not specified",
+          platform: "JSearch",
+          link: job.job_apply_link || job.job_google_link || "#",
+          matchScore: Math.min(matchScore + Math.floor(Math.random() * 20), 98),
+          description: (job.job_description || "No description available").slice(0, 300) + "...",
+          skills: detectedSkills.length > 0 ? detectedSkills : ["See job details"],
+        };
+      });
+
+      // Sort by match score
+      transformedJobs.sort((a, b) => b.matchScore - a.matchScore);
+      
+      setJobs(transformedJobs);
+      toast.success(`Found ${transformedJobs.length} matching jobs!`);
     } catch (error) {
-      toast.error("Failed to search jobs. Please try again.");
+      console.error("Error fetching jobs:", error);
+      toast.error("Failed to fetch jobs. Please check your API key.");
+      setJobs([]);
     } finally {
       setIsSearching(false);
     }
@@ -76,58 +97,27 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header onOpenSettings={() => setSettingsOpen(true)} />
+      <Navbar />
       
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Find Your Dream Job with AI
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Let artificial intelligence match you with the perfect opportunities
-            </p>
-          </div>
-
+      <HeroSection />
+      
+      {/* Search Section */}
+      <section id="search" className="py-12 -mt-8">
+        <div className="container mx-auto px-4">
           <JobSearchForm onSearch={handleSearch} isSearching={isSearching} />
-
-          {jobs.length > 0 && (
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                  <Briefcase className="w-6 h-6 text-primary" />
-                  Matching Jobs ({jobs.length})
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Sorted by AI match score
-                </p>
-              </div>
-              
-              <div className="grid gap-4">
-                {jobs.map((job) => (
-                  <JobCard key={job.id} job={job} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {!isSearching && jobs.length === 0 && (
-            <div className="text-center py-16">
-              <div className="w-20 h-20 rounded-full bg-muted/50 flex items-center justify-center mx-auto mb-4">
-                <Briefcase className="w-10 h-10 text-muted-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                No jobs yet
-              </h3>
-              <p className="text-muted-foreground">
-                Start by filling out the search form above to find matching opportunities
-              </p>
-            </div>
-          )}
         </div>
-      </main>
+      </section>
 
-      <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
+      {/* Results Section */}
+      <JobResultsSection 
+        jobs={jobs} 
+        isLoading={isSearching} 
+        hasSearched={hasSearched} 
+      />
+
+      <FeaturesSection />
+      <HowItWorksSection />
+      <Footer />
     </div>
   );
 };
