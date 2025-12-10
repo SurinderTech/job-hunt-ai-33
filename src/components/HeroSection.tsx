@@ -1,6 +1,10 @@
-import { Sparkles, Search, Zap, Target } from "lucide-react";
+import { Sparkles, Search, Zap, Target, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background effects */}
@@ -27,10 +31,23 @@ export const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Our AI analyzes your skills and experience to match you with the perfect opportunities. 
             Search thousands of jobs from top platforms in seconds.
           </p>
+
+          {/* CTA Button */}
+          <div className="animate-fade-in mb-12" style={{ animationDelay: '0.25s' }}>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-accent hover:opacity-90 shadow-glow text-lg px-8 py-6 group"
+              onClick={() => navigate("/auth")}
+            >
+              <Sparkles className="w-5 h-5 mr-2" />
+              Get Started Free
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
