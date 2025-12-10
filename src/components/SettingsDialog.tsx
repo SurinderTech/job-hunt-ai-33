@@ -1,24 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Save, Key } from "lucide-react";
+import { Save, Key, Settings } from "lucide-react";
 import { toast } from "sonner";
 
-interface SettingsDialogProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
-
-export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
+export const SettingsDialog = () => {
+  const [open, setOpen] = useState(false);
   const [jsearchKey, setJsearchKey] = useState("");
   const [dailyLimit, setDailyLimit] = useState("10");
   const [platforms, setPlatforms] = useState({
@@ -27,20 +24,38 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
     linkedin: false,
   });
 
+  // Load saved settings on mount
+  useEffect(() => {
+    const savedKey = localStorage.getItem("jsearch_api_key");
+    if (savedKey) setJsearchKey(savedKey);
+    
+    const savedSettings = localStorage.getItem("settings");
+    if (savedSettings) {
+      const parsed = JSON.parse(savedSettings);
+      if (parsed.dailyLimit) setDailyLimit(parsed.dailyLimit);
+      if (parsed.platforms) setPlatforms(parsed.platforms);
+    }
+  }, []);
+
   const handleSave = () => {
-    // Save to localStorage for now
+    // Save API key separately for easy access
+    localStorage.setItem("jsearch_api_key", jsearchKey);
     localStorage.setItem("settings", JSON.stringify({
-      jsearchKey,
       dailyLimit,
       platforms,
     }));
     
     toast.success("Settings saved successfully!");
-    onOpenChange(false);
+    setOpen(false);
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+          <Settings className="w-5 h-5" />
+        </Button>
+      </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
@@ -101,14 +116,14 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Checkbox
-                  id="jsearch"
+                  id="jsearch-platform"
                   checked={platforms.jsearch}
                   onCheckedChange={(checked) =>
                     setPlatforms({ ...platforms, jsearch: checked as boolean })
                   }
                 />
                 <label
-                  htmlFor="jsearch"
+                  htmlFor="jsearch-platform"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   JSearch (Multiple sources)
@@ -151,7 +166,7 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
             </div>
           </div>
 
-          <Button onClick={handleSave} className="w-full bg-gradient-primary">
+          <Button onClick={handleSave} className="w-full bg-gradient-to-r from-primary to-accent">
             <Save className="w-4 h-4 mr-2" />
             Save Settings
           </Button>
