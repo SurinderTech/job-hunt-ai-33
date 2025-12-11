@@ -1,16 +1,20 @@
-<div align="center">
-🌐 Job-Hunt-AI
+<div align="">
+<h1>🌐 Job-Hunt-AI</h1>
 AI-Powered Job Matching Platform
 <p align="center"> <img src="https://img.shields.io/badge/AI_ENGINE-ACTIVE-7F00FF?style=for-the-badge"/> <img src="https://img.shields.io/badge/JOB_SEARCH-REAL_TIME-FF007F?style=for-the-badge"/> <img src="https://img.shields.io/badge/MATCH_SCORE-ENABLED-00E5FF?style=for-the-badge"/> </p> </div>
 <div align="center"> <img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=28&duration=3500&color=00E5FF&center=true&vCenter=true&width=750&lines=Find+Your+Perfect+Career+Match+Using+AI;Real-Time+Job+Search+Across+Platforms;AI-Enhanced+Skill+Matching+Engine;Fast%2C+Modern%2C+Cyberpunk+UI" /> </div>
-<div align="center">⚡ Overview</div>
+<div align="">
+   <h1>⚡ Overview</h1>
+</div>
 
 Job-Hunt-AI is a futuristic job-matching system that scans roles, locations, and skills—then ranks the best opportunities using AI-powered relevance scoring.
 Designed to feel fast, futuristic, and efficient.
 
-<div align="center">🚀 Core Features</div>
-<div align="center">
-🔥 Feature	💬 Description
+<div align="">
+   <h1> 🚀Core Features</h1>
+</div>
+<div align="">
+
 🤖 AI Skill Engine	Reads your skills & compares with thousands of roles
 ⚡ Live Job Fetching	Instantly streams fresh job listings
 🎯 Match Score System	Each job gets a smart, relevance-based rating
@@ -18,7 +22,9 @@ Designed to feel fast, futuristic, and efficient.
 🧭 Guided Search UI	Minimal, fast, futuristic workflow
 🔒 Secure System	No exposure of user data
 </div>
-<div align="center">🌈 Cyberpunk Divider</div>
+<div align="">
+   <h1>🌈 Cyberpunk Divider</h1>🌈 Cyberpunk Divider
+</div>
 <p align="center"> <img src="https://raw.githubusercontent.com/DenverCoder1/readme-typing-svg/master/demo/typing-svg.gif" width="430"/> </p>
 <div align="center">🖼 Screenshots (Grid Layout)</div>
 <div align="center">
