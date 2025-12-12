@@ -25,7 +25,7 @@ Designed to feel fast, futuristic, and efficient.
 <div align="">
    <h1>🌈 Cyberpunk Divider</h1>
 </div>
-<p align="center"> <img src="" width="430"/> </p>
+<p align="center"> <img src="Screenshot (748).png" width="430"/> </p>
 <div align="center">🖼 Screenshots (Grid Layout)</div>
 <div align="center">
 🔥 Dashboard & Search UI
