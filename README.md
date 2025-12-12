@@ -29,7 +29,7 @@ Designed to feel fast, futuristic, and efficient.
 <div align="center">🖼 Screenshots (Grid Layout)</div>
 <div align="center">
 🔥 Dashboard & Search UI
-<table> <tr> <td><img src="Screenshot (711).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (716).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
+<table> <tr> <td><img src="Screenshot (749).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (716).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
 🎯 Results & Resume Analyzer
 <table> <tr> <td><img src="Screenshot (714).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;"></td> <td><img src="Screenshot (715).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> </tr> </table> </div>
 <div align="center">🧠 How It Works</div>
