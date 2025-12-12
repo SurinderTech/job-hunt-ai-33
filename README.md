@@ -23,14 +23,14 @@ Designed to feel fast, futuristic, and efficient.
 🔒 Secure System	No exposure of user data
 </div>
 <div align="">
-   <h1>🌈 Cyberpunk Divider</h1>
+   <h1>Screenshots</h1>
 </div>
-<p align="center"> <img src="Screenshot (748).png" width="430"/> </p>
-<div align="center">🖼 Screenshots (Grid Layout)</div>
+<p align="center"> <img src="Screenshot (748).png" width="430"/> Home page </p>
+<div align="center"></div>
 <div align="center">
-🔥 Dashboard & Search UI
+🔥 Dashboard & Input UI
 <table> <tr> <td><img src="Screenshot (749).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (750).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
-🎯 Results & Resume Analyzer
+🎯Results 
 <table> <tr> <td><img src="Screenshot (751).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;"></td> <td><img src="Screenshot (752).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> </tr> </table> </div>
 <div align="center">🧠 How It Works</div>
 USER INPUT
