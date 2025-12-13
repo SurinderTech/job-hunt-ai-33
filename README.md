@@ -47,18 +47,14 @@ MATCH ENGINE
    ▼
 JOB FEED OUTPUT (Ranked)
 
-<div align="center">🛠 Tech Stack</div>
-<details> <summary><h3>⚛️ Frontend</h3></summary>
+<div align=""> <h1>🛠 Tech Stack</h1>
+</div>
+| Category         | Tech Used               |
+| ---------------- | ----------------------- |
+| 💻 **Languages** | TypeScript · JavaScript |
+| 🎨 **Frontend**  | React · CSS · Bootstrap |
+| 🗄️ **Database** | MongoDB                 |
 
-React
-
-Vite
-
-TypeScript
-
-Tailwind CSS
-
-React Query
 
 </details> <details> <summary><h3>🧩 System Architecture</h3></summary>
 
@@ -71,7 +67,8 @@ AI-based skill ranking
 Secure resume analyzer system
 
 </details>
-<div align="center">📁 Project Structure</div>
+<div align=""><h1>📁 Project Structure</h1>
+</div>
 job-hunt-ai/
 │── public/
 │── src/
@@ -86,18 +83,21 @@ job-hunt-ai/
 ├── vite.config.ts
 └── README.md
 
-<div align="center">⚙️ Installation</div>
-git clone https://github.com/SurinderTech/job-hunt-ai-33
-cd job-hunt-ai-33
-npm install
+<div align=""> <h1>⚙️ Installation</h1>
+</div>
+git clone https://github.com/SurinderTech/job-hunt-ai-33 <br>
+cd job-hunt-ai-33<br>
+npm install<br>
 npm run dev
 
-<div align="center">🔐 Environment Variables</div>
-VITE_JOB_API_KEY=your_api_key
-VITE_BACKEND_URL=your_backend_url
-VITE_RESUME_PARSER_KEY=your_parser
+<div align=""> <h1>🔐 Environment Variables</h1>
+</div>
+VITE_JOB_API_KEY=your_api_key<br>
+VITE_BACKEND_URL=your_backend_url<br>
+VITE_RESUME_PARSER_KEY=your_parser<br>
 
-<div align="center">💻 API Usage Example</div>
+<div align=""> <h1>💻 API Usage Example</h1>
+</div>
 const loadJobs = async (role, skills) => {
   const res = await fetch(
     `${import.meta.env.VITE_BACKEND_URL}/api/jobs?role=${role}&skills=${skills}`
