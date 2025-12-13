@@ -105,13 +105,14 @@ const loadJobs = async (role, skills) => {
   return res.json();
 };
 
-<div align="center">🔥 Highlight Features</div>
-+ Ultra-fast job search system
-+ Real-time intelligent ranking
-+ Modern cyberpunk UI styling
-+ Resume-powered recommendations
+<div align=""> <h1>🔥 Highlight Features</h1></div>
++ Ultra-fast job search system<br>
++ Real-time intelligent ranking<br>
++ Modern cyberpunk UI styling<br>
++ Resume-powered recommendations<br>
 + Multi-platform job aggregation
 
-<div align="center">🏁 Closing Note</div>
+<div align=""> <h1>🏁 Closing Note</h1>
+</div>
 
 Job-Hunt-AI blends AI intelligence with a next-gen UI to give job seekers a faster, smarter way to find opportunities.
