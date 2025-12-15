@@ -47,8 +47,8 @@ MATCH ENGINE
    ▼
 JOB FEED OUTPUT (Ranked)
 
-<div align=""> <h1>🛠 Tech Stack</h1>
-</div>
+ <h1>🛠 Tech Stack</h1>
+
 | Category         | Tech Used               |
 | ---------------- | ----------------------- |
 | 💻 **Languages** | TypeScript · JavaScript |
@@ -67,8 +67,9 @@ AI-based skill ranking
 Secure resume analyzer system
 
 </details>
-<div align=""><h1>📁 Project Structure</h1>
-</div>
+## 📁 Project Structure
+
+```txt
 job-hunt-ai/
 │── public/
 │── src/
@@ -82,9 +83,10 @@ job-hunt-ai/
 ├── package.json
 ├── vite.config.ts
 └── README.md
+```
 
-<div align=""> <h1>⚙️ Installation</h1>
-</div>
+ <h1>⚙️ Installation</h1>
+
 git clone https://github.com/SurinderTech/job-hunt-ai-33 <br>
 cd job-hunt-ai-33<br>
 npm install<br>
