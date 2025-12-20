@@ -78,10 +78,18 @@ job-hunt-ai/
 
  <h1>⚙️ Installation</h1>
 
-git clone https://github.com/SurinderTech/job-hunt-ai-33 <br>
-cd job-hunt-ai-33<br>
-npm install<br>
+```
+git clone https://github.com/SurinderTech/job-hunt-ai-33 
+```
+```
+cd job-hunt-ai-33
+```
+```
+npm install
+```
+```
 npm run dev
+```
 
 <div align=""> <h1>🔐 Environment Variables</h1>
 </div>
