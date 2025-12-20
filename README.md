@@ -32,21 +32,10 @@ Designed to feel fast, futuristic, and efficient.
 <table> <tr> <td><img src="Screenshot (749).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (750).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
 🎯Results 
 <table> <tr> <td><img src="Screenshot (751).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;"></td> <td><img src="Screenshot (752).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> </tr> </table> </div>
-<div align="">
+<div align="center">
    <h1>How It Works</h1>
 </div>
-USER INPUT
-   │
-   ▼
-AI SKILL INTERPRETER
-   │   → Extract skills
-   │   → Understand job role context
-   ▼
-MATCH ENGINE
-   │   → Compare & evaluate relevance
-   ▼
-JOB FEED OUTPUT (Ranked)
-
+<img src="" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;">
  <h1>🛠 Tech Stack</h1>
 
 | Category         | Tech Used               |
