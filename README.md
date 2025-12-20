@@ -35,7 +35,9 @@ Designed to feel fast, futuristic, and efficient.
 <div align="center">
    <h1>How It Works</h1>
 </div>
-<img src="" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;">
+<div align="center">
+<img src="Decision Path Option-2025-12-20-081004.png" width="200">
+   </div>
  <h1>🛠 Tech Stack</h1>
 
 | Category         | Tech Used               |
