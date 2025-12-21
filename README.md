@@ -112,6 +112,13 @@ const loadJobs = async (role, skills) => {
 + Modern cyberpunk UI styling<br>
 + Resume-powered recommendations<br>
 + Multi-platform job aggregation
+<br>
+<br>
+<br>
+ Reach out
+ surinderkumar3182@gmail.com
+
+
 
 <div align=""> <h1>🏁 Closing Note</h1>
 </div>
