@@ -30,6 +30,7 @@ Designed to feel fast, futuristic, and efficient.
 <div align="center">
 🔥 Dashboard & Input UI
 <table> <tr> <td><img src="Screenshot (749).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (750).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
+<td><img src="" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td>
 🎯Results 
 <table> <tr> <td><img src="Screenshot (751).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;"></td> <td><img src="Screenshot (752).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> </tr> </table> </div>
 <div align="center">
