@@ -15,9 +15,9 @@ Designed to feel fast, futuristic, and efficient.
 </div>
 <div align="">
 
-🤖 AI Skill Engine	Reads your skills & compares with thousands of roles
-⚡ Live Job Fetching	Instantly streams fresh job listings
-🎯 Match Score System	Each job gets a smart, relevance-based rating
+🤖 AI Skill Engine	Reads your skills & compares with thousands of roles<br>
+⚡ Live Job Fetching	Instantly streams fresh job listings<br>
+🎯 Match Score System	Each job gets a smart, relevance-based rating<br>
 📄 Resume Upload	AI extracts skills to improve accuracy
 🧭 Guided Search UI	Minimal, fast, futuristic workflow
 🔒 Secure System	No exposure of user data
