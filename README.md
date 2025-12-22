@@ -25,12 +25,11 @@ Designed to feel fast, futuristic, and efficient.
 <div align="">
    <h1>Screenshots</h1>
 </div>
-<p align="center"> <img src="Screenshot (748).png" width="430"/> Home page </p>
-<div align="center"></div>
 <div align="center">
 🔥 Dashboard & Input UI
-<table> <tr> <td><img src="Screenshot (749).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (750).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
-<td><img src="" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td>
+<table> <tr> <td><img src="Screenshot (748).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> <td><img src="Screenshot (749).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #00E5FF;"></td> </tr> </table> <br/>
+   Add JS Search API Key
+<table> <tr> <td><img src="Screenshot (823).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> </tr> </table> <br/>
 🎯Results 
 <table> <tr> <td><img src="Screenshot (751).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #FF007F;"></td> <td><img src="Screenshot (752).png" width="420" style="border-radius:10px; box-shadow:0 0 18px #7F00FF;"></td> </tr> </table> </div>
 <div align="center">
