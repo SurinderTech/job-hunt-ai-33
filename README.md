@@ -121,7 +121,7 @@ const loadJobs = async (role, skills) => {
 <h1>Feel free to Fork this repository and build your own version.</h1>
 Pull requests are welcome — whether it's fixing bugs, improving performance, or adding features.
 
-### 📩 Contact Me
+ <h1>📩 Contact Me</h1>
 
 Have questions or want to collaborate? Reach out anytime:
 
