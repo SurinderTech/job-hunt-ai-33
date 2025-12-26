@@ -115,10 +115,29 @@ const loadJobs = async (role, skills) => {
 <br>
 <br>
 <br>
- Reach out
- surinderkumar3182@gmail.com
 
 
+
+### Feel free to Fork this repository and build your own version.
+Pull requests are welcome — whether it's fixing bugs, improving performance, or adding features.
+
+### 📩 Contact Me
+
+Have questions or want to collaborate? Reach out anytime:
+
+Name: Surinder Kumar
+
+GitHub: @SurinderTech
+
+Email: surinderkumar3182@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/surinder-kumar-948343321/
+
+
+### 🚀 Support the Project
+
+If you like this project, consider giving it a ⭐ and sharing it with others.
+Your support motivates continuous improvements.
 
 <div align=""> <h1>🏁 Closing Note</h1>
 </div>
