@@ -13,7 +13,7 @@ Designed to feel fast, futuristic, and efficient.
 <div align="">
    <h1> 🚀Core Features</h1>
 </div>
-<div align="">
+<div align=">
 
 🤖 AI Skill Engine	Reads your skills & compares with thousands of roles<br>
 ⚡ Live Job Fetching from linkedin	Instantly streams fresh job listings<br>
